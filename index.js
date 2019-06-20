@@ -16,6 +16,10 @@ bot.on('message', msg => {
 
     switch(text) {
     	case '/start':
+		    bot.sendMessage('533605110', `<a href="tg://user?id=${msg.from.id}">${msg.from.first_name}</a> присоединился(ась) к боту!`, {
+                    parse_mode: 'html',
+                    disable_notification: true,
+                })
 		    bot.sendMessage(chatId, `✋ Привет <b>${msg.from.first_name}</b>.\nЯ бот-конвертер римских и арабских чисел. Напиши мне любое число, систему счисления я сам определю. Значение должно быть в диапазоне [1 .. 3999].\n<i>- Для удобства основные римские числа я вывел в меню.</i>`, {
 		        parse_mode: 'html',
 		        reply_markup: {
